@@ -1,7 +1,7 @@
 {
   "name": "professor-willow",
   "version": "1.0.0",
-  "description": "Professor Willow Discord bot for Pokemon Go",
+  "description": "Professor Pine Discord bot for Pokemon Go",
   "main": "index.js",
   "dependencies": {
     "@mapbox/polyline": "^0.2.0",
