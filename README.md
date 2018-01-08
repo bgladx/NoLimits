@@ -1,4 +1,4 @@
-# Professor Pine Discord Bot
+# Professor Willow Discord Bot
 
 ### Purpose
 Primary purpose is to organize raids, secondary purpose to have fun!
