@@ -1,0 +1,16 @@
+{
+  "discord_bot_token": "Mzk5NzY5OTI0MzcwOTU2Mjg5.DTSTdQ.wMSv_xxxeLuuxptNN5SkR87qzHk",
+  "discord_notify_token": "Mzk5NzcwNTcyMTkzNjYwOTQ5.DTST7g.HA4uTrmaeodht7kBh9G58dSuyjE",
+  "owner": "349946492729163777",
+  "pokemon_url_base": "https://rankedboost.com/wp-content/plugins/ice/pokemon-go/",
+  "github_repo": "NoLimits",
+  "github_user": "bgladx",
+  "github_password": "7LyhmX5g",
+  "google_api_key": "  ",
+  "db": {
+    "host": "localhost",
+    "user": "root",
+    "password": "",
+    "schema": "pine"
+  }
+}
