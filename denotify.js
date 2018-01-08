@@ -1,25 +1,25 @@
 "use strict";
 
-const log = require('loglevel').getLogger('NotifyCommand'),
+const log = require('loglevel').getLogger('DenotifyCommand'),
 	Commando = require('discord.js-commando'),
 	{CommandGroup} = require('../../app/constants'),
 	Helper = require('../../app/helper'),
 	Notify = require('../../app/notify');
 
-class NotifyCommand extends Commando.Command {
+class DenotifyCommand extends Commando.Command {
 	constructor(client) {
 		super(client, {
-			name: 'want',
+			name: 'unwant',
 			group: CommandGroup.NOTIFICATIONS,
-			memberName: 'want',
-			aliases: ['i-want', 'notify'],
-			description: 'Adds notifications for a raid boss.',
-			details: 'Use this command to request notifications for a specific raid boss.',
-			examples: ['\t!want ttar'],
+			memberName: 'unwant',
+			aliases: ['i-dont-want', 'dont-want', 'denotify'],
+			description: 'Removes notifications for a raid boss.',
+			details: 'Use this command to remove notifications for a specific raid boss.',
+			examples: ['\t!unwant ttar'],
 			args: [
 				{
 					key: 'pokemon',
-					prompt: 'What pokémon do you wish to be notified for?\nExample: `lugia`\n',
+					prompt: 'What pokémon do you wish to be no longer be notified for?\nExample: `lugia`\n',
 					type: 'pokemon',
 					min: true  // hacky way of saying we require a specific pokemon (type looks at this parameter)
 				}
@@ -29,8 +29,8 @@ class NotifyCommand extends Commando.Command {
 		});
 
 		client.dispatcher.addInhibitor(message => {
-			if (!!message.command && message.command.name === 'want' && !Helper.isBotChannel(message)) {
-				return ['invalid-channel', message.reply(Helper.getText('notify.warning', message))];
+			if (!!message.command && message.command.name === 'unwant' && !Helper.isBotChannel(message)) {
+				return ['invalid-channel', message.reply(Helper.getText('denotify.warning', message))];
 			}
 			return false;
 		});
@@ -39,10 +39,10 @@ class NotifyCommand extends Commando.Command {
 	async run(message, args) {
 		const pokemon = args['pokemon'];
 
-		Notify.assignNotification(message.member, pokemon)
+		Notify.removeNotification(message.member, pokemon)
 			.then(result => message.react(Helper.getEmoji('snorlaxthumbsup') || '👍'))
 			.catch(err => log.error(err));
 	}
 }
 
-module.exports = NotifyCommand;
+module.exports = DenotifyCommand;
