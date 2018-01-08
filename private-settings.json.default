@@ -5,7 +5,7 @@
   "pokemon_url_base": "https://rankedboost.com/wp-content/plugins/ice/pokemon-go/",
   "github_repo": "NoLimits",
   "github_user": "bgladx",
-  "github_password": "7LyhmX5g",
+  "github_password": "",
   "google_api_key": "  ",
   "db": {
     "host": "localhost",
